@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "deploy": "git push heroku main",
+    "deploy-firebase": "firebase hosting:channel:deploy todo-vue-2021",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

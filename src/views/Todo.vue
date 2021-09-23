@@ -32,19 +32,9 @@
             </v-list-item-content>
 
             <v-list-item-action>
-              <v-menu >
-                <template v-slot:activator="{ on, attrs }">
-                  <v-btn dark icon v-bind="attrs" v-on="on">
-                    <v-icon color="gray">mdi-dots-vertical</v-icon>
-                  </v-btn>
-                </template>
- 
-                <v-list>
-                  <v-list-item  v-for="(item, i) in items" :key="i">
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
-                  </v-list-item>
-                </v-list>
-              </v-menu>
+              <v-btn icon @click.stop="deleteTask(task.id)">
+                <v-icon color="gray lighten-1">mdi-delete</v-icon>
+              </v-btn>
             </v-list-item-action>
           </template>
         </v-list-item>
@@ -61,12 +51,6 @@ export default {
     return {
       newTitleTask: "",
       tasks: [],
-      items: [
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me' },
-        { title: 'Click Me 2' },
-      ],
     };
   },
   methods: {
